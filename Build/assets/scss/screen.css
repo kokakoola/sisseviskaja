@@ -357,7 +357,7 @@ a {
 /* START : Global styles */
 #pricecalculator {
   margin: 20px auto;
-  width: 700px; }
+  width: 100%; }
 
 #contentarea {
   margin: 30px auto;
@@ -375,12 +375,21 @@ p, strong {
   width: 50%; }
   .col-half.upper {
     padding-top: 15px; }
-  .col-half.left {
-    float: left; }
-  .col-half.right {
-    float: right; }
-    .col-half.right.divided {
-      border-left: 1px solid #cccccc; }
+  .col-half.divided {
+    border-left: 1px solid #cccccc; }
+
+.left {
+  float: left; }
+
+.right {
+  float: right; }
+
+.col-sixty {
+  width: 60%; }
+
+.col-forty {
+  width: 40%;
+  white-space: nowrap; }
 
 .section-horizontal {
   padding: 10px 0; }
@@ -400,10 +409,11 @@ p, strong {
   padding: 25px 19px;
   background: white;
   clear: both;
-  border-top: 1px solid #cccccc; }
+  border-top: 1px solid #cccccc;
+  overflow: auto; }
 
 #total {
-  display: inline-block;
+  float: left;
   line-height: 0.7;
   margin-top: 10px; }
   #total .small {

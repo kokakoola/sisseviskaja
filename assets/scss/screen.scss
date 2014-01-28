@@ -174,7 +174,7 @@ user-select: none;
 
 #pricecalculator {
 	margin: 20px auto;
-	width: 700px;
+	width: 100%;
 }
 
 #contentarea {
@@ -197,15 +197,26 @@ p, strong {
 	&.upper {
 		padding-top: 15px;
 	}
-	&.left {
-		float: left;
-	}
-	&.right {
-		float: right;
 		&.divided {
 			border-left: $border;
 		}
+}
+
+.left {
+		float: left;
 	}
+
+.right {
+	float: right;
+}
+
+.col-sixty {
+	width: 60%;
+}
+
+.col-forty {
+	width: 40%;
+	white-space: nowrap;
 }
 
 .section-horizontal {
@@ -230,10 +241,11 @@ p, strong {
 	background: white;
 	clear: both;
 	border-top: $border;
+	overflow: auto; 
 }
 
 #total { 
-	display: inline-block;
+	float: left;
 	line-height: 0.7;
 	margin-top: 10px;
 	.small {

@@ -114,13 +114,14 @@ function ReplaceNumberWithCommas(yourNumber) {
     //Seperates the components of the number
     var n= yourNumber.toString().split(".");
     //Comma-fies the first part
-    n[0] = n[0].replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+    n[0] = n[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     //Combines the two sections
     return n.join(",");
 }
 
-var calculatePrice = function () {
 
+
+var calculatePrice = function () {
     $("#js-price-desktop").val(desktopPrice[$("#js-slider-desktop").val()]);
     $("#js-volume-desktop").html(desktopVolume[$("#js-slider-desktop").val()]);
 
@@ -134,6 +135,14 @@ var calculatePrice = function () {
 
     $("#js-price-mobile-vol").val(mobilePriceVol[$("#js-slider-mobile-vol").val()]);
     $("#js-volume-mobile-vol").html(mobileVolumeVol[$("#js-slider-mobile-vol").val()]);
+    // $("#js-volume-mobile-vol").html(mobileVolumeVol[$("#js-slider-mobile-vol").val()]);
+
+    // $(function() {
+    // var x = $("#js-slider-mobile-vol").slider();
+    // $("#js-slider-mobile").slide(function() {
+    //     x.slider('setValue', 2);
+    //     });
+    // });
 
     $("#js-volume-mobile-sms-val").val(mobileVolumeVolSms[$("#js-slider-mobile-vol").val()]);
     $("#js-volume-mobile-min-val").val(mobileVolumeVolMin[$("#js-slider-mobile-vol").val()]);
@@ -282,31 +291,31 @@ var calculatePrice = function () {
 $(document).ready( function() {
 
     $("#js-slider-desktop").slider()
-    .on('slide', function(ev){
+    .on('slide slideStop', function (ev) {
         calculatePrice();
     });
 
     $("#js-slider-phone").slider()
-    .on('slide', function(ev){
+    .on('slide slideStop', function (ev) {
         addOnePhone();
         calculatePrice();
     });
 
     
     $("#js-slider-mobile").slider()
-    .on('slide', function(ev){
+    .on('slide slideStop', function (ev) {
         addOneMobile();
         calculatePrice();
     });
 
     $("#js-slider-mobile-vol").slider()
-    .on('slide', function(ev){
+    .on('slide slideStop', function (ev) {
         addOneMobileVol();
         calculatePrice();
     });
 
     $("#js-slider-dongle").slider()
-    .on('slide', function(ev){
+    .on('slide slideStop', function (ev) {
         addOneDongle();
         calculatePrice();
     });
