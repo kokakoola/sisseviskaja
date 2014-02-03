@@ -274,7 +274,7 @@ h1, h2, h3, h4, h5, h6 {
   display: none; }
 
 .blue-text {
-  color: #0f8ac2; }
+  color: #c41b79; }
 
 .violet-text {
   color: #652d86; }
@@ -355,6 +355,10 @@ a {
 
 /* END : Bootstrap styles */
 /* START : Global styles */
+button:focus {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
+
 #pricecalculator {
   margin: 20px auto;
   width: 100%; }

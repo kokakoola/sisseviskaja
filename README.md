@@ -7,3 +7,4 @@ Jquery põhine kalkulaator
 * css-is on portsjon Bootstrapi üldist css-i, mille võib Elioni korral välja visata
 * Laius on paindlik. Muuta tuleb #pricecalculator laiust.
 * Kompileeritud failid on Build kataloogis
+* sinist värvi on mugav muuta variables.scss failis
