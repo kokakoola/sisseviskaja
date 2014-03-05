@@ -31,7 +31,7 @@ var phonePrice = {
 };
 
 var mobileVolume = {
-    0: '<br /><span class="violet-text">Ei soovi</span>',
+    0: '<br /><span class="violet-text">0GB</span>',
     1: '<span class="violet-text">1,5GB</span><br>3M alla /<br>1M üles',
     2: '<span class="violet-text">5GB</span><br>21,6M alla /<br>5,7M üles',
     3: '<span class="violet-text">10GB</span><br>50M alla /<br>5M üles',
@@ -71,27 +71,30 @@ var mobileVolumeVol = {
     0: '<span class="violet-text" id="minsum"></span> minutit<br><span class="violet-text" id="smssum"></span> sms-i',
     1: '<span class="violet-text" id="minsum"></span> minutit<br><span class="violet-text" id="smssum"></span> sms-i',
     2: '<span class="violet-text" id="minsum"></span> minutit<br><span class="violet-text" id="smssum"></span> sms-i',
+    3: '<span class="violet-text" id="minsum"></span> minutit<br><span class="violet-text" id="smssum"></span> sms-i',
 };
 
 var mobileVolumeVolSms = {
 
-    0: "40",
-    1: "90",
-    2: "200"
+    0: "0",
+    1: "40",
+    2: "90",
+    3: "200"
 };
 
 var mobileVolumeVolMin = {
-
-    0: "400",
-    1: "900",
-    2: "2000"
+    0: "0",
+    1: "400",
+    2: "900",
+    3: "2000"
 };
 
 var mobilePriceVol = {
 
-    0: "6",
-    1: "12",
-    2: "24",
+    0: "3",
+    1: "6",
+    2: "12",
+    3: "24",
 };
 
 var dongleVolume = {
@@ -367,7 +370,7 @@ $("#js-sendIt").click(function(){
     }
 
     // var url = "path/to/script";
-
+   
     $.ajax({
            type: "POST",
            url: url,
