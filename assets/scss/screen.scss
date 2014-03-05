@@ -182,6 +182,7 @@ outline: none;
 	width: 100%;
 }
 
+
 #contentarea {
 	margin: 30px auto;
 	border: $border;
@@ -433,6 +434,20 @@ border-radius: 4px;
 		float: right;
 	}
 }
+
+// FIXES
+#pricecalculator {
+	[class^="icon-"], [class*=" icon-"]{
+		background: none;
+		width:	auto;	
+		height: auto;
+	}
+
+	.right{
+		text-align: initial;
+	}
+}
+
 /* END : Global styles */
 
 
