@@ -1,22 +1,4 @@
-<!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="en" class="ie ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="en" class="ie ie7"> <![endif]--> 
-<!--[if IE 8 ]>    <html lang="en" class="ie ie8"> <![endif]--> 
-<!--[if IE 9 ]>    <html lang="en" class="ie ie9"> <![endif]--> 
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8"> 
-  <title>Sisseviskaja</title>
-  <meta name="description" content=" " />
-  <meta name="viewport" content="width=device-width, initial-scale=1" /> 
-  <meta http-equiv="ClearType" content="true" /> 
-
-
-<!-- 
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" media="screen" /> -->
-  <link rel="stylesheet" href="assets/scss/screen.css" media="screen" /> 
-  <script src="assets/scripts/modernizr-2.6.2-custom.js"></script>
-
+<link href="/files/modules/pitcher/scss/screen.css" media="screen" rel="stylesheet" />
    </head>
 
   <body>
@@ -238,10 +220,13 @@
 
 
       <!-- All other scripts -->
-      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-      <script>!window.jQuery && document.write(unescape('%3Cscript src="assets/scripts/jquery-1.8.2.min.js"%3E%3C/script%3E'))</script>
-      <script src="assets/scripts/bootstrap-slider.js"></script>
-      <script src="assets/scripts/main.js"></script>
+      <script src="/files/modules/pitcher/scripts/bootstrap-slider.js"></script>
+      <script src="/files/modules/pitcher/scripts/main.js"></script>
+      <script type="text/javascript">
+        var formId ="hinnapakkumine";
+        //var dev-url = "/ariklient/telefon/aritelefon?__portlets=__ac0x30x2portlets0x3core0x3content!786&struts.portlet.action=%2Fcore%2Fcontent-form-submit&struts.portlet.mode=view";
+        var url = "/ariklient/telefon/aritelefon/sisseviskaja?__portlets=__ac0x30x2portlets0x3core0x3content!918&struts.portlet.mode=view&struts.portlet.action=%2Fcore%2Fcontent-form-submit";
+      </script>
       <!-- All other scripts -->
     </body>
     </html>
