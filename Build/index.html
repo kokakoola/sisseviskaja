@@ -103,18 +103,18 @@
           </div>
           <div class="section-horizontal clearfix">
             <div class="col-quarter text-center">
-              <p id="js-volume-mobile"></p> 
+              <p id="js-volume-mobile-vol"></p> 
             </div>
             <div class="col-threequarter">
-              <input class="slider" id="js-slider-mobile" type="text" value="0" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+              <input class="slider" id="js-slider-mobile-vol" type="text" value="0" data-slider-min="0" data-slider-max="3" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
             </div>
           </div>
           <div class="section-horizontal clearfix">
             <div class="col-quarter text-center">
-              <p id="js-volume-mobile-vol"></p> 
+              <p id="js-volume-mobile"></p> 
             </div>
             <div class="col-threequarter">
-              <input class="slider" id="js-slider-mobile-vol" type="text" value="0" data-slider-min="0" data-slider-max="2" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+              <input class="slider" id="js-slider-mobile" type="text" value="0" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
             </div>
           </div>
           <p class="small">
@@ -157,7 +157,7 @@
             <br>
             <span class="small">Hinnale lisandub käibemaks</span>
           </h2>
-          <button type="button" class="btn btn-primary" id="js-confirm-calc">Soovin täpset pakkumist</button>
+          <button type="button" class="btn btn-primary" id="js-confirm-calc">Soovin personaalset pakkumist</button>
         </div>
       </div>
 
@@ -179,49 +179,45 @@
               <input type="text" class="form-control" id="Phone" name="Phone">
             </div>
             <label for="name">Ettevõtte nimi </label><input type="text" name="company" id="">
-            <label for="name">E-posti aadress </label><input type="text" name="email" id="js-email" value="">
 
             <h2><span class="small">Millisel aadressil plaanid teenuseid kasutada?</span></h2>
-            <label for="name">Linn </label><input type="text" name="city" id="">
-            <label for="name">Tänav </label><input type="text" name="street" id="">
-            <label for="name">Maja </label><input type="text" name="house" id="">
-            <label for="name">Kontor </label><input type="text" name="office" id="">
+            <label for="name">Aadress </label><input type="text" name="address" id="">
           </div>
           <div id="chosenServices" class="hide">
             <strong>Internet</strong>
             <br>
-            Kiirus: <input type="text" id="js-volume-desktopStripped" value="0" name="kontoriInternetiKiirus" >
-            Kuutasu: <input type="text" id="js-price-desktop" value="0" name="kontoriInternetiKuutasu">
+            Kiirus: <input title="0" type="text" id="js-volume-desktopStripped" value="0" name="kontoriInternetiKiirus" >
+            Kuutasu: <input title="0" type="text" id="js-price-desktop" value="0" name="kontoriInternetiKuutasu">
             <br><br>
             <strong>Lauatelefoni liitumisi</strong>
             <br>
-            Maht: <input type="text" id="js-volume-phoneStripped" value="0" name="lauatelefoniMaht">
-            Kogus: <input type="text" id="js-counted-phone" value="0" name="lauatelefoniKogus">
-            Liitumiste hind: <input type="text" id="js-counted-phonePrice" value="0" name="lauatelefoniLiitumiseHind">
-            Hind: <input type="text" id="js-price-phone" value="0" name="lauatelefoniHind">
-            Kuutasu: <input type="text" id="js-counted-phoneSum" value="0" name="lauatelefoniKuutasu">
+            Maht: <input title="0" type="text" id="js-volume-phoneStripped" value="0" name="lauatelefoniMaht">
+            Kogus: <input title="0" type="text" id="js-counted-phone" value="0" name="lauatelefoniKogus">
+            Liitumiste hind: <input title="0" type="text" id="js-counted-phonePrice" value="0" name="lauatelefoniLiitumiseHind">
+            Hind: <input title="0" type="text" id="js-price-phone" value="0" name="lauatelefoniHind">
+            Kuutasu: <input title="0" type="text" id="js-counted-phoneSum" value="0" name="lauatelefoniKuutasu">
             <br><br>
             <strong>Mobiil ja mobiilinternet</strong>
             <br>
-            Kogus: <input type="text" id="js-counted-mobile" value="0" name="mobiiliKogus">
+            Kogus: <input title="0" type="text" id="js-counted-mobile" value="0" name="mobiiliKogus">
             <br>
             Pakett mobiilinternet:
-            Hind: <input id="js-price-mobile" name="mobiilinternetiHind">
-            Lisanduvad SMS-id: <input id="js-volume-mobile-sms" name="mobiilinternetigaLisanuvadSmsid"> 
-            Lisanduvad minutid: <input id="js-volume-mobile-minutes" name="mobiilinternetiga LisanduvadMinutid">
+            Hind: <input title="0" id="js-price-mobile" name="mobiilinternetiHind">
+            Lisanduvad SMS-id: <input title="0" id="js-volume-mobile-sms" name="mobiilinternetigaLisanuvadSmsid"> 
+            Lisanduvad minutid: <input title="0" id="js-volume-mobile-minutes" name="mobiilinternetiga LisanduvadMinutid">
             <br>
-            Pakett kõneaeg ja sms:  Hind: <input id="js-price-mobile-vol" name="mobiilKoneajaHind">
-            SMS-ide arv: <input id="js-volume-mobile-sms-val" value="0" name="mobiilKoneajaSmsiHulk"> 
-            Minutit: <input id="js-volume-mobile-min-val" name="mobiilKoneajaMinutiHulk">
+            Pakett kõneaeg ja sms:  Hind: <input title="0" id="js-price-mobile-vol" name="mobiilKoneajaHind">
+            SMS-ide arv: <input title="0" id="js-volume-mobile-sms-val" value="0" name="mobiilKoneajaSmsiHulk"> 
+            Minutit: <input title="0" id="js-volume-mobile-min-val" name="mobiilKoneajaMinutiHulk">
             <br>
-            Kuutasu: <input type="text" id="js-mobilesum" value="0" name="mobiilKuutasu"> 
+            Kuutasu: <input title="0" type="text" id="js-mobilesum" value="0" name="mobiilKuutasu"> 
             <br><br>
             <strong>Netipulk</strong>
             <br> 
-            Pakett: <input type="text" id="js-volume-dongleStripped" value="0" name="netipulkPakett">
-            Kogus: <input type="text" id="js-counted-dongle" value="0" name="netipulkKogus">
-            Hind: <input id="js-price-dongle" name="netipulkHind">
-            Kuutasu: <input type="text" id="js-donglesum" value="0" name="netipulkKuutasu">
+            Pakett: <input title="0" type="text" id="js-volume-dongleStripped" value="0" name="netipulkPakett">
+            Kogus: <input title="0" type="text" id="js-counted-dongle" value="0" name="netipulkKogus">
+            Hind: <input title="0" id="js-price-dongle" name="netipulkHind">
+            Kuutasu: <input title="0" type="text" id="js-donglesum" value="0" name="netipulkKuutasu">
           </div>
           <div class="alert alert-danger hide"><i class="icon icon-AlertTSIcon48px"></i>  Unustasid midagi täitmata. Palun vaata andmed üle.</div>
           <div class="buttongroup">
