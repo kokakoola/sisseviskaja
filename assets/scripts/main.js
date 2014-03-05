@@ -370,14 +370,14 @@ $("#js-sendIt").click(function(){
 
     $.ajax({
            type: "POST",
-           // url: url,
-           data: $("#theData").serialize(),
+           url: url,
+           data: $("#"+formId).serialize(),
            success: function(data) {
                 $("#js-contactwrapper").slideUp('slow');
                 $("#js-thankswrapper").show();
            }
          });
-    console.log($("#theData").serialize());
+    console.log($("#"+formId).serialize());
     return false;
 });
 
