@@ -9,9 +9,11 @@ $bgcolor: #F6F6F6;
 $alertcolor: #C41B79;
 $successcolor: #00B48C;
 
+/*
 @function emCalc($pxWidth) {
   @return $pxWidth / $em-base * 1em;
 }
+*/
 
 @mixin clearfix() {
     &:before,
