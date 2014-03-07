@@ -125,42 +125,42 @@ function ReplaceNumberWithCommas(yourNumber) {
 
 
 var calculatePrice = function () {
-    $jq("#js-price-desktop").val(desktopPrice[$jq("#js-slider-desktop").val()]);
-    $jq("#js-volume-desktop").html(desktopVolume[$jq("#js-slider-desktop").val()]);
+    $("#js-price-desktop").val(desktopPrice[$("#js-slider-desktop").val()]);
+    $("#js-volume-desktop").html(desktopVolume[$("#js-slider-desktop").val()]);
 
-    $jq("#js-price-phone").val(phonePrice[$jq("#js-slider-phone").val()]);
-    $jq("#js-volume-phone").html(phoneVolume[$jq("#js-slider-phone").val()]);
+    $("#js-price-phone").val(phonePrice[$("#js-slider-phone").val()]);
+    $("#js-volume-phone").html(phoneVolume[$("#js-slider-phone").val()]);
 
-    $jq("#js-price-mobile").val(mobilePrice[$jq("#js-slider-mobile").val()]);
-    $jq("#js-volume-mobile").html(mobileVolume[$jq("#js-slider-mobile").val()]);
-    $jq("#js-volume-mobile-minutes").val(mobileAddedMin[$jq("#js-slider-mobile").val()]);
-    $jq("#js-volume-mobile-sms").val(mobileAddedSms[$jq("#js-slider-mobile").val()]);
+    $("#js-price-mobile").val(mobilePrice[$("#js-slider-mobile").val()]);
+    $("#js-volume-mobile").html(mobileVolume[$("#js-slider-mobile").val()]);
+    $("#js-volume-mobile-minutes").val(mobileAddedMin[$("#js-slider-mobile").val()]);
+    $("#js-volume-mobile-sms").val(mobileAddedSms[$("#js-slider-mobile").val()]);
 
-    $jq("#js-price-mobile-vol").val(mobilePriceVol[$jq("#js-slider-mobile-vol").val()]);
-    $jq("#js-volume-mobile-vol").html(mobileVolumeVol[$jq("#js-slider-mobile-vol").val()]);
-    // $jq("#js-volume-mobile-vol").html(mobileVolumeVol[$jq("#js-slider-mobile-vol").val()]);
+    $("#js-price-mobile-vol").val(mobilePriceVol[$("#js-slider-mobile-vol").val()]);
+    $("#js-volume-mobile-vol").html(mobileVolumeVol[$("#js-slider-mobile-vol").val()]);
+    // $("#js-volume-mobile-vol").html(mobileVolumeVol[$("#js-slider-mobile-vol").val()]);
 
-    // $jq(function() {
-    // var x = $jq("#js-slider-mobile-vol").slider();
-    // $jq("#js-slider-mobile").slide(function() {
-    //     x.slider('setValue', 2);
+    // $(function() {
+    // var x = $("#js-slider-mobile-vol").bs-slider();
+    // $("#js-slider-mobile").slide(function() {
+    //     x.bs-slider('setValue', 2);
     //     });
     // });
 
-    $jq("#js-volume-mobile-sms-val").val(mobileVolumeVolSms[$jq("#js-slider-mobile-vol").val()]);
-    $jq("#js-volume-mobile-min-val").val(mobileVolumeVolMin[$jq("#js-slider-mobile-vol").val()]);
+    $("#js-volume-mobile-sms-val").val(mobileVolumeVolSms[$("#js-slider-mobile-vol").val()]);
+    $("#js-volume-mobile-min-val").val(mobileVolumeVolMin[$("#js-slider-mobile-vol").val()]);
 
-    $jq("#js-price-dongle").val(donglePrice[$jq("#js-slider-dongle").val()]);
-    $jq("#js-volume-dongle").html(dongleVolume[$jq("#js-slider-dongle").val()]);
+    $("#js-price-dongle").val(donglePrice[$("#js-slider-dongle").val()]);
+    $("#js-volume-dongle").html(dongleVolume[$("#js-slider-dongle").val()]);
 
-    var desktop = parseFloat($jq("#js-price-desktop").val());
-    var phonecount = parseFloat($jq("#js-counted-phone").val());
-    var phone = parseFloat($jq("#js-price-phone").val());
-    var mobilecount = parseFloat($jq("#js-counted-mobile").val());
-    var mobile = parseFloat($jq("#js-price-mobile").val());
-    var mobilevol = parseFloat($jq("#js-price-mobile-vol").val());
-    var donglecount = parseFloat($jq("#js-counted-dongle").val());
-    var dongle = parseFloat($jq("#js-price-dongle").val());
+    var desktop = parseFloat($("#js-price-desktop").val());
+    var phonecount = parseFloat($("#js-counted-phone").val());
+    var phone = parseFloat($("#js-price-phone").val());
+    var mobilecount = parseFloat($("#js-counted-mobile").val());
+    var mobile = parseFloat($("#js-price-mobile").val());
+    var mobilevol = parseFloat($("#js-price-mobile-vol").val());
+    var donglecount = parseFloat($("#js-counted-dongle").val());
+    var dongle = parseFloat($("#js-price-dongle").val());
 
     var phonecountsum;
 
@@ -181,213 +181,206 @@ var calculatePrice = function () {
 
     var countedround = counted.toFixed(2);
     var comnum = ReplaceNumberWithCommas(countedround);
-    $jq("#js-sum").html(comnum);
+    $("#js-sum").html(comnum);
 
 
-    var summedsms = parseFloat($jq("#js-volume-mobile-sms").val());
-    var summedsmsval = parseFloat($jq("#js-volume-mobile-sms-val").val());
+    var summedsms = parseFloat($("#js-volume-mobile-sms").val());
+    var summedsmsval = parseFloat($("#js-volume-mobile-sms-val").val());
     var smssum = summedsms + summedsmsval;
-    $jq('#smssum').html(smssum);
+    $('#smssum').html(smssum);
 
-    var summedmin = parseFloat($jq("#js-volume-mobile-minutes").val());
-    var summedminval = parseFloat($jq("#js-volume-mobile-min-val").val());
+    var summedmin = parseFloat($("#js-volume-mobile-minutes").val());
+    var summedminval = parseFloat($("#js-volume-mobile-min-val").val());
     var minsum = summedmin + summedminval;
-    $jq('#minsum').html(minsum);
+    $('#minsum').html(minsum);
 
 
 // Fill the form //
 
-    $jq("#js-volume-desktopStripped").val($jq("#js-volume-desktop").text());
+    $("#js-volume-desktopStripped").val($("#js-volume-desktop").text());
 
-    $jq("#js-phoneamount").html($jq("#js-counted-phone").val());
-    $jq("#js-volume-phoneStripped").val($jq("#js-volume-phone").text());
-    $jq("#js-counted-phonePrice").val((phonecountsum).toFixed(2));
-    $jq("#js-counted-phoneSum").val((phonesum).toFixed(2));
+    $("#js-phoneamount").html($("#js-counted-phone").val());
+    $("#js-volume-phoneStripped").val($("#js-volume-phone").text());
+    $("#js-counted-phonePrice").val((phonecountsum).toFixed(2));
+    $("#js-counted-phoneSum").val((phonesum).toFixed(2));
 
-    $jq("#js-mobileamount").html($jq("#js-counted-mobile").val());
-    $jq('#js-mobilesum').val((mobilesum).toFixed(2));
+    $("#js-mobileamount").html($("#js-counted-mobile").val());
+    $('#js-mobilesum').val((mobilesum).toFixed(2));
 
-    $jq("#js-dongleamount").html($jq("#js-counted-dongle").val());
-    $jq("#js-volume-dongleStripped").val($jq("#js-volume-dongle").text());
-    $jq('#js-donglesum').val((donglesum).toFixed(2));
-    $jq("#js-yourmail").html($jq("#js-email").val());
+    $("#js-dongleamount").html($("#js-counted-dongle").val());
+    $("#js-volume-dongleStripped").val($("#js-volume-dongle").text());
+    $('#js-donglesum').val((donglesum).toFixed(2));
+    $("#js-yourmail").html($("#js-email").val());
 
 };
 
 // count on -+
 
     var addDongle = function () {
-        var countD = $jq("#js-counted-dongle").val();
+        var countD = $("#js-counted-dongle").val();
             countD++;
         
-        $jq("#js-counted-dongle").val(countD);
+        $("#js-counted-dongle").val(countD);
         calculatePrice();
     };
 
     var removeDongle = function () {
-        var countD = $jq("#js-counted-dongle").val();
+        var countD = $("#js-counted-dongle").val();
         if (countD > 0)
             countD--;
 
-        $jq("#js-counted-dongle").val(countD);
+        $("#js-counted-dongle").val(countD);
         calculatePrice();
     };
 
     var addMobile = function () {
-        var countM = $jq("#js-counted-mobile").val();
+        var countM = $("#js-counted-mobile").val();
             countM++;
-        $jq("#js-counted-mobile").val(countM);
+        $("#js-counted-mobile").val(countM);
 
         calculatePrice();
     };
 
     var removeMobile = function () {
-        var countM = $jq("#js-counted-mobile").val();
+        var countM = $("#js-counted-mobile").val();
         if (countM > 0)
             countM--;
-        $jq("#js-counted-mobile").val(countM);
+        $("#js-counted-mobile").val(countM);
         calculatePrice();
     };
 
     var addPhone = function () {
-        var countP = $jq("#js-counted-phone").val();
+        var countP = $("#js-counted-phone").val();
             countP++;
-        $jq("#js-counted-phone").val(countP);
+        $("#js-counted-phone").val(countP);
         calculatePrice();
     };
 
     var removePhone = function () {
-        var countP = $jq("#js-counted-phone").val();
+        var countP = $("#js-counted-phone").val();
         if (countP > 0)
             countP--;
-        $jq("#js-counted-phone").val(countP);
+        $("#js-counted-phone").val(countP);
         calculatePrice();
     };
 
 // add one to count when slided
 
     function addOnePhone() {
-        if (($jq("#js-slider-phone").val() != 0) && ($jq("#js-counted-phone").val() == 0)) {
-            $jq("#js-counted-phone").val(1);
+        if (($("#js-slider-phone").val() != 0) && ($("#js-counted-phone").val() == 0)) {
+            $("#js-counted-phone").val(1);
             // window.addOnePhone = function (){};
         }
     }
 
     function addOneMobile() {
-        if (($jq("#js-slider-mobile").val() > 0) && ($jq("#js-counted-mobile").val() == 0)) {
-            $jq("#js-counted-mobile").val(1);
+        if (($("#js-slider-mobile").val() > 0) && ($("#js-counted-mobile").val() == 0)) {
+            $("#js-counted-mobile").val(1);
         }
     }
 
     function addOneMobileVol() {
-        if (($jq("#js-slider-mobile-vol").val() != 0) && ($jq("#js-slider-mobile").val() == 0)  && ($jq("#js-counted-mobile").val() == 0)) {
-            $jq("#js-counted-mobile").val(1);
+        if (($("#js-slider-mobile-vol").val() != 0) && ($("#js-slider-mobile").val() == 0)  && ($("#js-counted-mobile").val() == 0)) {
+            $("#js-counted-mobile").val(1);
         }
     }
 
     function addOneDongle() {
-        if (($jq("#js-slider-dongle").val() != 0) && ($jq("#js-counted-dongle").val() == 0) ) {
-            $jq("#js-counted-dongle").val(1);
+        if (($("#js-slider-dongle").val() != 0) && ($("#js-counted-dongle").val() == 0) ) {
+            $("#js-counted-dongle").val(1);
         }
     }
 
-    function init(){
-         $jq("#js-slider-desktop").slider()
-        .on('slide slideStop', function (ev) {
-            calculatePrice();
-        });
+$(document).ready( function() {
 
-        $jq("#js-slider-phone").slider()
-        .on('slide slideStop', function (ev) {
-            addOnePhone();
-            calculatePrice();
-        });
-
-        
-        $jq("#js-slider-mobile").slider()
-        .on('slide slideStop', function (ev) {
-            addOneMobile();
-            calculatePrice();
-        });
-
-        $jq("#js-slider-mobile-vol").slider()
-        .on('slide slideStop', function (ev) {
-            addOneMobileVol();
-            calculatePrice();
-        });
-
-        $jq("#js-slider-dongle").slider()
-        .on('slide slideStop', function (ev) {
-            addOneDongle();
-            calculatePrice();
-        });
-
-
-        $jq("#js-price-desktop").val("0");
-
-        $jq("#js-counted-phone").val("0");
-        $jq("#js-price-phone").val("0");
-
-        $jq("#js-counted-mobile").val("0");
-        $jq("#js-price-mobile").val("0");
-        $jq("#js-price-mobile-vol").val("0");
-
-        $jq("#js-volume-mobile-minutes").val("0");
-        $jq("#js-volume-mobile-min-val").val("0");
-        $jq("#js-volume-mobile-sms").val("0");
-        $jq("#js-volume-mobile-sms-val").val("0");
-
-        $jq("#js-counted-dongle").val("0");
-        $jq("#js-price-dongle").val("0");
-
+    $("#js-slider-desktop").bs-slider()
+    .on('slide slideStop', function (ev) {
         calculatePrice();
-    }
+    });
 
-$jq(document).ready( function() {
-    init();
+    $("#js-slider-phone").bs-slider()
+    .on('slide slideStop', function (ev) {
+        addOnePhone();
+        calculatePrice();
+    });
+
+    
+    $("#js-slider-mobile").bs-slider()
+    .on('slide slideStop', function (ev) {
+        addOneMobile();
+        calculatePrice();
+    });
+
+    $("#js-slider-mobile-vol").bs-slider()
+    .on('slide slideStop', function (ev) {
+        addOneMobileVol();
+        calculatePrice();
+    });
+
+    $("#js-slider-dongle").bs-slider()
+    .on('slide slideStop', function (ev) {
+        addOneDongle();
+        calculatePrice();
+    });
+
+
+    $("#js-price-desktop").val("0");
+
+    $("#js-counted-phone").val("0");
+    $("#js-price-phone").val("0");
+
+    $("#js-counted-mobile").val("0");
+    $("#js-price-mobile").val("0");
+    $("#js-price-mobile-vol").val("0");
+
+    $("#js-volume-mobile-minutes").val("0");
+    $("#js-volume-mobile-min-val").val("0");
+    $("#js-volume-mobile-sms").val("0");
+    $("#js-volume-mobile-sms-val").val("0");
+
+    $("#js-counted-dongle").val("0");
+    $("#js-price-dongle").val("0");
+
+    calculatePrice();
 });
 
 
-$jq("#js-confirm-calc").click(function(){
-    $jq("#js-calcwrapper").slideUp('slow');
-    $jq("#js-contactwrapper").show();
-    _gaq.push(['_trackPageview', '/misiganes-struktuur/ misiganes-struktuur/tellimine-step-2']);
+$("#js-confirm-calc").click(function(){
+    $("#js-calcwrapper").slideUp('slow');
+    $("#js-contactwrapper").show();
 });
 
-$jq("#js-back").click(function(){
-    $jq("#js-contactwrapper").hide();
-    $jq("#js-calcwrapper").show();
+$("#js-back").click(function(){
+    $("#js-contactwrapper").hide();
+    $("#js-calcwrapper").show();
 });
 
 
-$jq("#js-sendIt").click(function(){
+$("#js-sendIt").click(function(){
     // Check for required 
-    var empt = $jq(".form-group :input").val();
+    var empt = $(".form-group :input").val();
     if ( !empt ) {
-        $jq(".form-group").addClass("has-error");
-        $jq(".alert-danger").slideDown("fast");
+        $(".form-group").addClass("has-error");
+        $(".alert-danger").slideDown("fast");
         return false;
     }
     else {
-        $jq(".alert-danger").slideUp("fast");
-        $jq(".form-group").removeClass("has-error");
+        $(".alert-danger").slideUp("fast");
+        $(".form-group").removeClass("has-error");
     }
 
     // var url = "path/to/script";
-
+   
     $.ajax({
            type: "POST",
-           // url: url,
-           data: $jq("#theData").serialize(),
+           url: url,
+           data: $("#"+formId).serialize(),
            success: function(data) {
-                $jq("#js-contactwrapper").slideUp('slow');
-                $jq("#js-thankswrapper").show();
+                $("#js-contactwrapper").slideUp('slow');
+                $("#js-thankswrapper").show();
            }
          });
-    console.log($jq("#theData").serialize());
-
-    //GA
-    _gaq.push(['_trackPageview', '/misiganes-struktuur/ misiganes-struktuur/tellimine-step-3']);
+    console.log($("#"+formId).serialize());
     return false;
 });
 
