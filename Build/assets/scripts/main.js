@@ -141,9 +141,9 @@ var calculatePrice = function () {
     // $("#js-volume-mobile-vol").html(mobileVolumeVol[$("#js-slider-mobile-vol").val()]);
 
     // $(function() {
-    // var x = $("#js-slider-mobile-vol").slider();
+    // var x = $("#js-slider-mobile-vol").sliderBs();
     // $("#js-slider-mobile").slide(function() {
-    //     x.slider('setValue', 2);
+    //     x.sliderBs('setValue', 2);
     //     });
     // });
 
@@ -293,31 +293,31 @@ var calculatePrice = function () {
 
 $(document).ready( function() {
 
-    $("#js-slider-desktop").slider()
+    $("#js-slider-desktop").sliderBs()
     .on('slide slideStop', function (ev) {
         calculatePrice();
     });
 
-    $("#js-slider-phone").slider()
+    $("#js-slider-phone").sliderBs()
     .on('slide slideStop', function (ev) {
         addOnePhone();
         calculatePrice();
     });
 
     
-    $("#js-slider-mobile").slider()
+    $("#js-slider-mobile").sliderBs()
     .on('slide slideStop', function (ev) {
         addOneMobile();
         calculatePrice();
     });
 
-    $("#js-slider-mobile-vol").slider()
+    $("#js-slider-mobile-vol").sliderBs()
     .on('slide slideStop', function (ev) {
         addOneMobileVol();
         calculatePrice();
     });
 
-    $("#js-slider-dongle").slider()
+    $("#js-slider-dongle").sliderBs()
     .on('slide slideStop', function (ev) {
         addOneDongle();
         calculatePrice();
@@ -348,7 +348,6 @@ $(document).ready( function() {
 $("#js-confirm-calc").click(function(){
     $("#js-calcwrapper").slideUp('slow');
     $("#js-contactwrapper").show();
-    ga('send', 'pageview', '/ariklient/aritelefon/tellimine-step-2');
 });
 
 $("#js-back").click(function(){
@@ -371,27 +370,18 @@ $("#js-sendIt").click(function(){
     }
 
     // var url = "path/to/script";
-
+   
     $.ajax({
            type: "POST",
-           // url: url,
-           data: $("#theData").serialize(),
+           url: url,
+           data: $("#"+formId).serialize(),
            success: function(data) {
                 $("#js-contactwrapper").slideUp('slow');
                 $("#js-thankswrapper").show();
            }
          });
-    console.log($("#theData").serialize());
-
-    //GA
-    ga('send', 'pageview', '/ariklient/aritelefon/tellimine-step-3');
+    console.log($("#"+formId).serialize());
     return false;
 });
 
 document.addEventListener("touchstart", function(){}, true);
-
-
-
-
-
-
