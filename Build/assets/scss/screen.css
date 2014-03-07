@@ -23,7 +23,7 @@
 /* line 24, C:/Users/taurni/WEB/ARI/sisseviskaja/sisseviskaja/assets/scss/_variables.scss */
 .article:after { clear: both; }
 
-@font-face { font-family: 'icomoon'; src: url("fonts/icomoon.eot"); src: url("fonts/icomoon.eot?#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf") format("truetype"), url("fonts/icomoon.woff") format("woff"), url("fonts/icomoon.svg#icomoon") format("svg"); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'icomoon'; src: url("icomoon.eot"); src: url("icomoon.eot?#iefix") format("embedded-opentype"), url("icomoon.ttf") format("truetype"), url("icomoon.woff") format("woff"), url("icomoon.svg#icomoon") format("svg"); font-weight: normal; font-style: normal; }
 
 /* line 12, C:/Users/taurni/WEB/ARI/sisseviskaja/sisseviskaja/assets/scss/_style.scss */
 .icon { font-family: 'icomoon'; speak: none; font-style: normal; font-weight: normal; font-variant: normal; text-transform: none; line-height: 1; /* Better Font Rendering =========== */ -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
@@ -228,136 +228,141 @@ button:focus { outline: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 /* line 180, ../../../assets/scss/screen.scss */
 #pricecalculator { margin: 20px auto; width: 100%; }
 
-/* line 185, ../../../assets/scss/screen.scss */
+/* line 186, ../../../assets/scss/screen.scss */
 #contentarea { margin: 30px auto; border: 1px solid #cccccc; border-radius: 4px; }
 
-/* line 191, ../../../assets/scss/screen.scss */
+/* line 192, ../../../assets/scss/screen.scss */
 hr { margin: 0.5em 0; }
 
-/* line 195, ../../../assets/scss/screen.scss */
+/* line 196, ../../../assets/scss/screen.scss */
 p, strong { font-size: 15px; line-height: 1.1; }
 
-/* line 200, ../../../assets/scss/screen.scss */
+/* line 201, ../../../assets/scss/screen.scss */
 .col-half { width: 50%; }
-/* line 202, ../../../assets/scss/screen.scss */
+/* line 203, ../../../assets/scss/screen.scss */
 .col-half.upper { padding-top: 15px; }
-/* line 205, ../../../assets/scss/screen.scss */
+/* line 206, ../../../assets/scss/screen.scss */
 .col-half.divided { border-left: 1px solid #cccccc; }
 
-/* line 210, ../../../assets/scss/screen.scss */
+/* line 211, ../../../assets/scss/screen.scss */
 .left { float: left; }
 
-/* line 214, ../../../assets/scss/screen.scss */
+/* line 215, ../../../assets/scss/screen.scss */
 .right { float: right; }
 
-/* line 218, ../../../assets/scss/screen.scss */
+/* line 219, ../../../assets/scss/screen.scss */
 .col-sixty { width: 60%; }
 
-/* line 222, ../../../assets/scss/screen.scss */
+/* line 223, ../../../assets/scss/screen.scss */
 .col-forty { width: 40%; white-space: nowrap; }
 
-/* line 227, ../../../assets/scss/screen.scss */
+/* line 228, ../../../assets/scss/screen.scss */
 .section-horizontal { padding: 10px 0; }
 
-/* line 231, ../../../assets/scss/screen.scss */
+/* line 232, ../../../assets/scss/screen.scss */
 .col-quarter { width: 25%; float: left; padding-left: 10px; }
 
-/* line 237, ../../../assets/scss/screen.scss */
+/* line 238, ../../../assets/scss/screen.scss */
 .col-threequarter { width: 75%; float: right; padding: 0 19px; }
 
-/* line 243, ../../../assets/scss/screen.scss */
+/* line 244, ../../../assets/scss/screen.scss */
 #conclusion { width: 100%; padding: 25px 19px; background: white; clear: both; border-top: 1px solid #cccccc; overflow: auto; }
 
-/* line 252, ../../../assets/scss/screen.scss */
+/* line 253, ../../../assets/scss/screen.scss */
 #total { float: left; line-height: 0.7; margin-top: 10px; }
-/* line 256, ../../../assets/scss/screen.scss */
+/* line 257, ../../../assets/scss/screen.scss */
 #total .small { font-size: 55%; }
 
-/* line 263, ../../../assets/scss/screen.scss */
+/* line 264, ../../../assets/scss/screen.scss */
 h2 { color: #111111; line-height: 0.8em; font-weight: 600; letter-spacing: -0.025em; font-size: emCalc(30px); }
-/* line 269, ../../../assets/scss/screen.scss */
+/* line 270, ../../../assets/scss/screen.scss */
 h2 .small { font-size: 70%; color: #111111; font-weight: normal; padding: 0; }
 
-/* line 277, ../../../assets/scss/screen.scss */
+/* line 278, ../../../assets/scss/screen.scss */
 .col-quarter { font-size: 15px; line-height: 1.2em; }
-/* line 280, ../../../assets/scss/screen.scss */
+/* line 281, ../../../assets/scss/screen.scss */
 .col-quarter p { color: #545556; }
-/* line 283, ../../../assets/scss/screen.scss */
+/* line 284, ../../../assets/scss/screen.scss */
 .col-quarter span { font-weight: 600; }
 
-/* line 288, ../../../assets/scss/screen.scss */
+/* line 289, ../../../assets/scss/screen.scss */
 .small { padding: 0 19px 10px; line-height: 1.2; color: #545556; font-size: 11px; }
 
-/* line 295, ../../../assets/scss/screen.scss */
+/* line 296, ../../../assets/scss/screen.scss */
 span.amount { font-weight: 600; font-size: 22px; }
 
-/* line 300, ../../../assets/scss/screen.scss */
+/* line 301, ../../../assets/scss/screen.scss */
 .img { color: #652d86; }
 
-/* line 304, ../../../assets/scss/screen.scss */
+/* line 305, ../../../assets/scss/screen.scss */
 .col-quarter .icon { display: block; font-size: 50px; margin-top: 20px; }
 
-/* line 311, ../../../assets/scss/screen.scss */
+/* line 312, ../../../assets/scss/screen.scss */
 #js-volume-mobile, #js-volume-dongle { margin-top: -20px; }
 
-/* line 315, ../../../assets/scss/screen.scss */
+/* line 316, ../../../assets/scss/screen.scss */
 #js-volume-mobile-vol, #js-volume-desktop { margin-top: -10px; }
 
-/* line 319, ../../../assets/scss/screen.scss */
+/* line 320, ../../../assets/scss/screen.scss */
 .col-quarter { padding-left: 10px; }
 
-/* line 325, ../../../assets/scss/screen.scss */
+/* line 326, ../../../assets/scss/screen.scss */
 .col-quarter .icon-InternetTSIcon48px { margin-top: 5px; }
 
-/* line 331, ../../../assets/scss/screen.scss */
+/* line 332, ../../../assets/scss/screen.scss */
 #js-confirm-calc { margin-top: 6px; margin-right: 7px; display: inline-block; float: right; }
-/* line 336, ../../../assets/scss/screen.scss */
+/* line 337, ../../../assets/scss/screen.scss */
 #js-confirm-calc.btn { padding: 6px 20px; }
 
-/* line 344, ../../../assets/scss/screen.scss */
+/* line 345, ../../../assets/scss/screen.scss */
 #theform { width: 400px; margin: 0 auto; }
-/* line 347, ../../../assets/scss/screen.scss */
+/* line 348, ../../../assets/scss/screen.scss */
 #theform h2 span.small { display: inline-block; margin-top: 30px; }
 
-/* line 353, ../../../assets/scss/screen.scss */
+/* line 354, ../../../assets/scss/screen.scss */
 label { display: inline-block; margin-top: 10px; }
 
-/* line 358, ../../../assets/scss/screen.scss */
+/* line 359, ../../../assets/scss/screen.scss */
 input { display: block; width: 100%; height: 34px; padding: 6px 12px; font-size: 14px; line-height: 1.428571429; color: #555555; vertical-align: middle; background-color: #ffffff; border: 1px solid #cccccc; border-radius: 4px; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); -webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
 
-/* line 376, ../../../assets/scss/screen.scss */
+/* line 377, ../../../assets/scss/screen.scss */
 input:focus { border-color: rgba(103, 47, 135, 0.8); outline: 0; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(103, 47, 135, 0.6); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(103, 47, 135, 0.6); }
 
-/* line 383, ../../../assets/scss/screen.scss */
+/* line 384, ../../../assets/scss/screen.scss */
 .alert-text { color: #c41b79; }
 
-/* line 387, ../../../assets/scss/screen.scss */
+/* line 388, ../../../assets/scss/screen.scss */
 .has-error .form-control { border-color: #c41b79; -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); }
 
-/* line 393, ../../../assets/scss/screen.scss */
+/* line 394, ../../../assets/scss/screen.scss */
 .has-error .control-label { color: #c41b79; }
 
-/* line 397, ../../../assets/scss/screen.scss */
+/* line 398, ../../../assets/scss/screen.scss */
 .has-error .form-control:focus { border-color: rgba(103, 47, 135, 0.8); -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #652d86; box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 6px #652d86; }
 
-/* line 403, ../../../assets/scss/screen.scss */
+/* line 404, ../../../assets/scss/screen.scss */
 .alert-danger { color: #c41b79; background-color: white; border-color: #c41b79; }
 
-/* line 409, ../../../assets/scss/screen.scss */
+/* line 410, ../../../assets/scss/screen.scss */
 .alert { padding: 15px; margin-bottom: 20px; border: 1px solid #c41b79; border-radius: 4px; }
 
-/* line 416, ../../../assets/scss/screen.scss */
+/* line 417, ../../../assets/scss/screen.scss */
 .alert.alert-danger { margin-top: 20px; }
 
-/* line 419, ../../../assets/scss/screen.scss */
+/* line 420, ../../../assets/scss/screen.scss */
 .alert .icon { color: #c41b79; font-size: 22px; vertical-align: middle; }
 
-/* line 427, ../../../assets/scss/screen.scss */
+/* line 428, ../../../assets/scss/screen.scss */
 .buttongroup { margin-top: 20px; }
-/* line 429, ../../../assets/scss/screen.scss */
+/* line 430, ../../../assets/scss/screen.scss */
 .buttongroup a { line-height: 2; }
-/* line 432, ../../../assets/scss/screen.scss */
+/* line 433, ../../../assets/scss/screen.scss */
 .buttongroup button { float: right; }
+
+/* line 440, ../../../assets/scss/screen.scss */
+#pricecalculator [class^="icon-"], #pricecalculator [class*=" icon-"] { background: none; width: auto; height: auto; }
+/* line 446, ../../../assets/scss/screen.scss */
+#pricecalculator .right { text-align: initial; }
 
 /* END : Global styles */
 /* START : MEDIA QUERIES */
