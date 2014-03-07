@@ -141,9 +141,9 @@ var calculatePrice = function () {
     // $("#js-volume-mobile-vol").html(mobileVolumeVol[$("#js-slider-mobile-vol").val()]);
 
     // $(function() {
-    // var x = $("#js-slider-mobile-vol").slider();
+    // var x = $("#js-slider-mobile-vol").bs-slider();
     // $("#js-slider-mobile").slide(function() {
-    //     x.slider('setValue', 2);
+    //     x.bs-slider('setValue', 2);
     //     });
     // });
 
@@ -293,31 +293,31 @@ var calculatePrice = function () {
 
 $(document).ready( function() {
 
-    $("#js-slider-desktop").slider()
+    $("#js-slider-desktop").bs-slider()
     .on('slide slideStop', function (ev) {
         calculatePrice();
     });
 
-    $("#js-slider-phone").slider()
+    $("#js-slider-phone").bs-slider()
     .on('slide slideStop', function (ev) {
         addOnePhone();
         calculatePrice();
     });
 
     
-    $("#js-slider-mobile").slider()
+    $("#js-slider-mobile").bs-slider()
     .on('slide slideStop', function (ev) {
         addOneMobile();
         calculatePrice();
     });
 
-    $("#js-slider-mobile-vol").slider()
+    $("#js-slider-mobile-vol").bs-slider()
     .on('slide slideStop', function (ev) {
         addOneMobileVol();
         calculatePrice();
     });
 
-    $("#js-slider-dongle").slider()
+    $("#js-slider-dongle").bs-slider()
     .on('slide slideStop', function (ev) {
         addOneDongle();
         calculatePrice();

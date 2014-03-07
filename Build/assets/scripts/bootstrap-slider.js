@@ -356,13 +356,13 @@
 		}
 	};
 
-	$.fn.slider = function ( option, val ) {
+	$.fn.sliderBs = function ( option, val ) {
 		return this.each(function () {
 			var $this = $(this),
 				data = $this.data('slider'),
 				options = typeof option === 'object' && option;
 			if (!data)  {
-				$this.data('slider', (data = new Slider(this, $.extend({}, $.fn.slider.defaults,options))));
+				$this.data('slider', (data = new Slider(this, $.extend({}, $.fn.sliderBs.defaults,options))));
 			}
 			if (typeof option == 'string') {
 				data[option](val);
@@ -370,7 +370,7 @@
 		})
 	};
 
-	$.fn.slider.defaults = {
+	$.fn.sliderBs.defaults = {
 		min: 0,
 		max: 10,
 		step: 1,
@@ -384,6 +384,6 @@
 		}
 	};
 
-	$.fn.slider.Constructor = Slider;
+	$.fn.sliderBs.Constructor = Slider;
 
 }( window.jQuery );
