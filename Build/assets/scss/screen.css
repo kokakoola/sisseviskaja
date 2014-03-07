@@ -274,7 +274,7 @@ p, strong { font-size: 15px; line-height: 1.1; }
 #total .small { font-size: 55%; }
 
 /* line 264, ../../../assets/scss/screen.scss */
-h2 { color: #111111; line-height: 0.8em; font-weight: 600; letter-spacing: -0.025em; font-size: emCalc(30px); }
+h2 { color: #111111; line-height: 0.8em; font-weight: 600; letter-spacing: -0.025em; font-size: 30px; }
 /* line 270, ../../../assets/scss/screen.scss */
 h2 .small { font-size: 70%; color: #111111; font-weight: normal; padding: 0; }
 
