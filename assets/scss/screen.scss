@@ -125,7 +125,7 @@ border-color: darken($primary-color, 5%);
 	}
 }
 
-.btn-link .icon {
+.btn-link .icon {  
 	font-size: 25px;
 	// transition: color 0.3s ease;
 	vertical-align: middle;
@@ -270,7 +270,7 @@ h2 {
 	line-height: 0.8em;
 	font-weight: 600;
 	letter-spacing: -0.025em;
-	font-size: 30px;
+	font-size: 25px; //30px;
 		.small {
 		font-size: 70%;
 		color: $hcolor;

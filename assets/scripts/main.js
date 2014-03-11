@@ -384,10 +384,4 @@ $("#js-sendIt").click(function(){
     return false;
 });
 
-document.addEventListener("touchstart", function(){}, true);
-
-
-
-
-
-
+//document.addEventListener("touchstart", function(){}, true);
