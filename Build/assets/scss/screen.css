@@ -193,7 +193,7 @@ p, strong { font-size: 15px; line-height: 1.1; }
 #total { float: left; line-height: 0.7; margin-top: 10px; }
 #total .small { font-size: 55%; }
 
-h2 { color: #111111; line-height: 0.8em; font-weight: 600; letter-spacing: -0.025em; font-size: 30px; }
+h2 { color: #111111; line-height: 0.8em; font-weight: 600; letter-spacing: -0.025em; font-size: 25px; }
 h2 .small { font-size: 70%; color: #111111; font-weight: normal; padding: 0; }
 
 .col-quarter { font-size: 15px; line-height: 1.2em; }
