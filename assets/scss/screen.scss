@@ -100,7 +100,7 @@ border-color: darken($primary-color, 5%);
 	font-weight: normal;
 	color: $primary-color;
 	cursor: pointer;
-	border-radius: 30px;
+	border-radius: 30px !important;
 	width: 30px;
 	height: 30px;
 	padding: 0!important;
@@ -123,6 +123,10 @@ border-color: darken($primary-color, 5%);
 	// 	background-color: white;
 	// 	color: $primary-color;
 	// }
+
+	> i{
+		margin-left:2px;
+	}
 }
 
 .btn-link .icon {
@@ -233,6 +237,10 @@ p, strong {
 	width: 25%;
 	float: left;
 	padding-left: 10px;
+
+	&.text-center > i{
+		margin-left: 15px;
+	}
 }
 
 .col-threequarter {
