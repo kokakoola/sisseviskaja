@@ -136,7 +136,7 @@ h1, h2, h3, h4, h5, h6 { line-height: normal; }
 
 .text-center { text-align: center; }
 
-.text-right { text-align: right; }
+.text-right { text-align: right !important; }
 
 a { color: #652d86; }
 a:hover { color: #572773; }
