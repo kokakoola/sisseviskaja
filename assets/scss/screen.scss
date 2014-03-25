@@ -181,9 +181,16 @@ outline: none;
 }
 
 
+
 #pricecalculator {
 	margin: 20px auto;
 	width: 100%;
+
+	button{
+		&.btn-link{
+			background-color: #FFF;
+		}
+	}
 }
 
 

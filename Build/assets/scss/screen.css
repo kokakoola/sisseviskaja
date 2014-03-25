@@ -162,6 +162,7 @@ a:hover { color: #572773; }
 button:focus { outline: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); }
 
 #pricecalculator { margin: 20px auto; width: 100%; }
+#pricecalculator button.btn-link { background-color: #FFF; }
 
 #contentarea { margin: 30px auto; border: 1px solid #cccccc; border-radius: 4px; }
 
