@@ -1,6 +1,12 @@
-# Sisseviskaja
-Asub [siin](http://hammr.co/1038274/)
+# Sisseviskaja v.1.01
+Asub [siin](hammr.co/7572774)
 Jquery põhine kalkulaator
+
+## Uus mobiiliteenus 26.03
+- Väiksed tekstiparandused
+- Mobiilide blokis muutused:
+  - Selgitav tekst (small) on muutuja nüüd
+  - Uus teenus lisatud laiendiga 1000: uus slider htmlis ja andmeid. 
 
 ## Known issues
 
