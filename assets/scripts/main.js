@@ -151,177 +151,183 @@ var calculatePrice = function () {
 
 // Sliders dependencies
     var $sliderMobileGb = $('#slider-mobile-gb');
-    var value = $sliderMobileGb.sliderBs('getValue');
+    var $sliderMobileMinuteSms = $('#slider-mobile-minutesms');
+    var valueGb = $sliderMobileGb.sliderBs('getValue');
+    var valueMinuteSms = $sliderMobileMinuteSms.sliderBs('getValue');
 
-    if ($("#slider-mobile-minutesms").val() == 3 ) {
+    if ($sliderMobileMinuteSms.val() == 3 ) {
       $sliderMobileGb.data('slider').max = 2;
-      $sliderMobileGb.sliderBs('setValue', value);
+      $sliderMobileGb.sliderBs('setValue', valueGb);
       $("#input-mobile-gb-price").val(mobileGbPrices1000[$("#slider-mobile-gb").val()]);
       $("#text-mobile-gb").html(mobileGbTexts1000[$("#slider-mobile-gb").val()]);
-
+      
     } else {
       $sliderMobileGb.data('slider').max = 5;
-      $sliderMobileGb.sliderBs('setValue', value);
+      $sliderMobileGb.sliderBs('setValue', valueGb);
       $("#input-mobile-gb-price").val(mobileGbPrices[$("#slider-mobile-gb").val()]);
       $("#text-mobile-gb").html(mobileGbTexts[$("#slider-mobile-gb").val()]);
     }
 
-    $("#input-fixinternet-price").val(fixinternetPrices[$("#slider-fixinternet").val()]);
+    var fixinternetSlided = parseFloat(fixinternetPrices[$("#slider-fixinternet").val()]);
+    $("#input-fixinternet-price").val(fixinternetSlided);
 
-    // $("#text-mobile-gb").html(mobileGbTexts[$("#slider-mobile-gb").val()]);
+    var fixphoneSlided = parseFloat(fixphonePrices[$("#slider-fixphone").val()]);
+    $("#input-fixphone-price").val(fixphoneSlided);
 
-    $("#input-fixphone-fixphonePrices").val(fixphonePrices[$("#slider-fixphone").val()]);
+    var mobileGbPlusMinutesSlided = parseFloat(mobileAddedToMinuteSmsMinutes[$("#slider-mobile-gb").val()]);
+    $("#input-mobile-gb-plus-minutes").val(mobileGbPlusMinutesSlided);
 
-    $("#input-mobile-gb-plus-minutes").val(mobileAddedToMinuteSmsMinutes[$("#slider-mobile-gb").val()]);
-    var foo = parseFloat(mobileAddedToMinuteSmsMinutes[$("#slider-mobile-gb").val()]);
-    $("#input-mobile-gb-plus-sms").val(mobileAddedToMinuteSmsSmss[$("#slider-mobile-gb").val()]);
+    var mobileGbAddedMinutesSlided = parseFloat(mobileAddedToMinuteSmsSmss[$("#slider-mobile-gb").val()]);
+    $("#input-mobile-gb-plus-sms").val(mobileGbAddedMinutesSlided);
 
-    $("#input-mobile-minutesms-price").val(mobileMinuteSmsPrices[$("#slider-mobile-minutesms").val()]);
+    var mobileMinuteSmsPriceSlided = parseFloat(mobileMinuteSmsPrices[$("#slider-mobile-minutesms").val()]);
+    $("#input-mobile-minutesms-price").val(mobileMinuteSmsPriceSlided);
 
+    var mobileMinuteSmsSmsSlided = parseFloat(mobileMinuteSmsSmss[$("#slider-mobile-minutesms").val()]);
+    $("#input-mobile-minutesms-sms").val(mobileMinuteSmsSmsSlided);
 
-    $("#input-mobile-minutesms-sms").val(mobileMinuteSmsSmss[$("#slider-mobile-minutesms").val()]);
-    $("#input-mobile-minutesms-minutes").val(mobileMinuteSmsMinutes[$("#slider-mobile-minutesms").val()]);
+    var mobileMinuteSmsMinuteSlided = parseFloat(mobileMinuteSmsMinutes[$("#slider-mobile-minutesms").val()]);
+    $("#input-mobile-minutesms-minutes").val(mobileMinuteSmsMinuteSlided);
 
-    $("#input-dongle-price").val(donglePrices[$("#slider-dongle").val()]);
+    var donglePriceSlided = parseFloat(donglePrices[$("#slider-dongle").val()]);
+    $("#input-dongle-price").val(donglePriceSlided);
 
-    var desktop = parseFloat($("#input-fixinternet-price").val());
-    var phonecount = parseFloat($("#input-fixphone-howmany").val());
-    var phone = parseFloat($("#input-fixphone-fixphonePrices").val());
-    var mobilecount = parseFloat($("#input-mobile-howmany").val());
-    var mobile = parseFloat($("#input-mobile-gb-price").val());
-    var mobilevol = parseFloat($("#input-mobile-minutesms-price").val());
-    var donglecount = parseFloat($("#input-dongle-howmany").val());
-    var dongle = parseFloat($("#input-dongle-price").val());
+// Prices and numbers logic
+    var fixinternetPrice = parseFloat($("#input-fixinternet-price").val());
+    var numberOfPhones = parseFloat($("#input-fixphone-amount").val());
+    var phonePrice = parseFloat($("#input-fixphone-price").val());
+    var numberOfMobiles = parseFloat($("#input-mobile-amount").val());
+    var mobilePrice = parseFloat($("#input-mobile-gb-price").val());
+    var mobileAddedMinuteSmsPrice = parseFloat($("#input-mobile-minutesms-price").val());
+    var numberOfDongles = parseFloat($("#input-dongle-amount").val());
+    var donglePrice = parseFloat($("#input-dongle-price").val());
 
-    var phonecountsum;
-
-    if (desktop > 0 && phonecount > 0) {
-        phonecountsum = (phonecount * 4.15) - 4.15;
+    // Tax reduced when internet is chosen
+    var phoneTax;
+    if (fixinternetPrice > 0 && numberOfPhones > 0) {
+        phoneTax = (numberOfPhones * 4.15) - 4.15;
     } else {
-        phonecountsum = phonecount * 4.15;
+        phoneTax = numberOfPhones * 4.15;
     }
 
-    var phonesum = ( phonecount * phone ) + phonecountsum;
-    var mobilesum = mobilecount * (mobile + mobilevol);
-    var donglesum = donglecount * dongle;
-
-    var counted =  desktop + phonesum + mobilesum + donglesum;
-
-    var countedround = counted.toFixed(2);
-    var comnum = ReplaceNumberWithCommas(countedround);
-    $("#total-sum").html(comnum);
-
-    var mobileGbSliderSms = parseFloat($("#input-mobile-gb-plus-sms").val());
-    var mobileMinuteSmsSliderSms = parseFloat($("#input-mobile-minutesms-sms").val());
-    var mobileSmsSum = mobileGbSliderSms + mobileMinuteSmsSliderSms;
-    $('#mobile-sms-sum').html(mobileSmsSum);
-
-    var mobileGbSliderMinutes = parseFloat($("#input-mobile-gb-plus-minutes").val());
-    var mobileMinuteSmsSliderMinutes = parseFloat($("#input-mobile-minutesms-minutes").val());
-    var mobileMinuteSum = mobileGbSliderMinutes + mobileMinuteSmsSliderMinutes;
-    $('#mobile-minute-sum').html(mobileMinuteSum);
+    var fixinternetSum = fixinternetPrice;
+    var phoneSum = ( numberOfPhones * phonePrice ) + phoneTax;
+    var mobileSum = numberOfMobiles * (mobilePrice + mobileAddedMinuteSmsPrice);
+    var dongleSum = numberOfDongles * donglePrice;
+    var allSum =  fixinternetSum + phoneSum + mobileSum + dongleSum;
+    var allSumDecimal = allSum.toFixed(2);
+    var allSumFormatted = ReplaceNumberWithCommas(allSumDecimal);
+    $("#total-sum").html(allSumFormatted);
 
 // Fill the html 
     $("#text-fixinternet").html(fixinternetTexts[$("#slider-fixinternet").val()]);
     $("#text-fixphone").html(fixphoneTexts[$("#slider-fixphone").val()]);
     $("#text-mobile-minutesms").html(mobileMinuteSmsTexts[$("#slider-mobile-minutesms").val()]);
-
+    // what about slider-mobile-gb-text?
     $("#description-mobile").html(mobileDescriptions[$("#slider-mobile-minutesms").val()]);
     $("#text-dongle").html(dongleTexts[$("#slider-dongle").val()]);
+    // Fill global vars
+    var mobileGbSliderSms = parseFloat($("#input-mobile-gb-plus-sms").val());
+    var mobileMinuteSmsSliderSms = parseFloat($("#input-mobile-minutesms-sms").val());
+    var mobileSmsSum = mobileGbSliderSms + mobileMinuteSmsSliderSms;
+    $('#mobile-sms-sum').html(mobileSmsSum);
+    var mobileGbSliderMinutes = parseFloat($("#input-mobile-gb-plus-minutes").val());
+    var mobileMinuteSmsSliderMinutes = parseFloat($("#input-mobile-minutesms-minutes").val());
+    var mobileMinuteSum = mobileGbSliderMinutes + mobileMinuteSmsSliderMinutes;
+    $('#mobile-minute-sum').html(mobileMinuteSum);
 
 // Fill the form //
-
     $("#input-fixinternet-speed").val($("#text-fixinternet").text());
 
-    $("#number-fixphone").html($("#input-fixphone-howmany").val());
+    $("#number-fixphone").html($("#input-fixphone-amount").val());
     $("#input-fixphone-minutes").val($("#text-fixphone").text());
-    $("#input-fixphone-singleprice").val((phonecountsum).toFixed(2));
-    $("#input-fixphone-sum").val((phonesum).toFixed(2));
+    $("#input-fixphone-singleprice").val((phoneTax).toFixed(2));
+    $("#input-fixphone-sum").val((phoneSum).toFixed(2));
 
-    $("#number-mobile").html($("#input-mobile-howmany").val());
-    $('#input-mobile-sum').val((mobilesum).toFixed(2));
+    $("#number-mobile").html($("#input-mobile-amount").val());
+    $('#input-mobile-sum').val((mobileSum).toFixed(2));
 
-    $("#number-dongle").html($("#input-dongle-howmany").val());
+    $("#number-dongle").html($("#input-dongle-amount").val());
     $("#input-dongle-gb").val($("#text-dongle").text());
-    $('#input-dongle-sum').val((donglesum).toFixed(2));
-    $("#js-yourmail").html($("#js-email").val());
+    $('#input-dongle-sum').val((dongleSum).toFixed(2));
 
+    $("#js-yourmail").html($("#js-email").val());
 };
 
 // count on -+
 
     var addDongle = function () {
-        var countD = $("#input-dongle-howmany").val();
+        var countD = $("#input-dongle-amount").val();
             countD++;
         
-        $("#input-dongle-howmany").val(countD);
+        $("#input-dongle-amount").val(countD);
         calculatePrice();
     };
 
     var removeDongle = function () {
-        var countD = $("#input-dongle-howmany").val();
+        var countD = $("#input-dongle-amount").val();
         if (countD > 0)
             countD--;
 
-        $("#input-dongle-howmany").val(countD);
+        $("#input-dongle-amount").val(countD);
         calculatePrice();
     };
 
     var addMobile = function () {
-        var countM = $("#input-mobile-howmany").val();
+        var countM = $("#input-mobile-amount").val();
             countM++;
-        $("#input-mobile-howmany").val(countM);
+        $("#input-mobile-amount").val(countM);
 
         calculatePrice();
     };
 
     var removeMobile = function () {
-        var countM = $("#input-mobile-howmany").val();
+        var countM = $("#input-mobile-amount").val();
         if (countM > 0)
             countM--;
-        $("#input-mobile-howmany").val(countM);
+        $("#input-mobile-amount").val(countM);
         calculatePrice();
     };
 
     var addPhone = function () {
-        var countP = $("#input-fixphone-howmany").val();
+        var countP = $("#input-fixphone-amount").val();
             countP++;
-        $("#input-fixphone-howmany").val(countP);
+        $("#input-fixphone-amount").val(countP);
         calculatePrice();
     };
 
     var removePhone = function () {
-        var countP = $("#input-fixphone-howmany").val();
+        var countP = $("#input-fixphone-amount").val();
         if (countP > 0)
             countP--;
-        $("#input-fixphone-howmany").val(countP);
+        $("#input-fixphone-amount").val(countP);
         calculatePrice();
     };
 
 // add one to count when slided
 
     function addOnePhone() {
-        if (($("#slider-fixphone").val() != 0) && ($("#input-fixphone-howmany").val() == 0)) {
-            $("#input-fixphone-howmany").val(1);
+        if (($("#slider-fixphone").val() != 0) && ($("#input-fixphone-amount").val() == 0)) {
+            $("#input-fixphone-amount").val(1);
             // window.addOnePhone = function (){};
         }
     }
 
     function addOneMobile() {
-        if (($("#slider-mobile-gb").val() > 0) && ($("#input-mobile-howmany").val() == 0)) {
-            $("#input-mobile-howmany").val(1);
+        if (($("#slider-mobile-gb").val() > 0) && ($("#input-mobile-amount").val() == 0)) {
+            $("#input-mobile-amount").val(1);
         }
     }
 
     function addOneMobileVol() {
-        if (($("#slider-mobile-minutesms").val() != 0) && ($("#slider-mobile-gb").val() == 0)  && ($("#input-mobile-howmany").val() == 0)) {
-            $("#input-mobile-howmany").val(1);
+        if (($("#slider-mobile-minutesms").val() != 0) && ($("#slider-mobile-gb").val() == 0)  && ($("#input-mobile-amount").val() == 0)) {
+            $("#input-mobile-amount").val(1);
         }
     }
 
     function addOneDongle() {
-        if (($("#slider-dongle").val() != 0) && ($("#input-dongle-howmany").val() == 0) ) {
-            $("#input-dongle-howmany").val(1);
+        if (($("#slider-dongle").val() != 0) && ($("#input-dongle-amount").val() == 0) ) {
+            $("#input-dongle-amount").val(1);
         }
     }
 
@@ -359,19 +365,18 @@ $(document).ready( function() {
 
     $("#input-fixinternet-price").val("0");
 
-    $("#input-fixphone-howmany").val("0");
-    $("#input-fixphone-fixphonePrices").val("0");
+    $("#input-fixphone-amount").val("0");
+    $("#input-fixphone-price").val("0");
 
-    $("#input-mobile-howmany").val("0");
+    $("#input-mobile-amount").val("0");
     $("#input-mobile-gb-price").val("0");
-    $("#input-mobile-minutesms-price").val("0");
-
     $("#input-mobile-gb-plus-minutes").val("0");
-    $("#input-mobile-minutesms-minutes").val("0");
     $("#input-mobile-gb-plus-sms").val("0");
+    $("#input-mobile-minutesms-price").val("0");
+    $("#input-mobile-minutesms-minutes").val("0");
     $("#input-mobile-minutesms-sms").val("0");
 
-    $("#input-dongle-howmany").val("0");
+    $("#input-dongle-amount").val("0");
     $("#input-dongle-price").val("0");
 
     calculatePrice();
