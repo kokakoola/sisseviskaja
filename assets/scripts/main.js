@@ -152,22 +152,20 @@ var calculatePrice = function () {
 // Sliders dependencies
     var $sliderMobileGb = $('#slider-mobile-gb');
     var $sliderMobileMinuteSms = $('#slider-mobile-minutesms');
-    var valueGb = $sliderMobileGb.sliderBs('getValue');
+    var valueGb = $sliderMobileGb.data('slider').getValue();
     var valueMinuteSms = $sliderMobileMinuteSms.sliderBs('getValue');
 
-    if ($sliderMobileMinuteSms.val() == 3 ) {
+    if ($sliderMobileMinuteSms.val() == 3) {
       $sliderMobileGb.data('slider').max = 2;
       $sliderMobileGb.sliderBs('setValue', valueGb);
       $("#input-mobile-gb-price").val(mobileGbPrices1000[$("#slider-mobile-gb").val()]);
       $("#text-mobile-gb").html(mobileGbTexts1000[$("#slider-mobile-gb").val()]);
-      
     } else {
       $sliderMobileGb.data('slider').max = 5;
       $sliderMobileGb.sliderBs('setValue', valueGb);
       $("#input-mobile-gb-price").val(mobileGbPrices[$("#slider-mobile-gb").val()]);
       $("#text-mobile-gb").html(mobileGbTexts[$("#slider-mobile-gb").val()]);
     }
-
     var fixinternetSlided = parseFloat(fixinternetPrices[$("#slider-fixinternet").val()]);
     $("#input-fixinternet-price").val(fixinternetSlided);
 
@@ -334,31 +332,31 @@ var calculatePrice = function () {
 $(document).ready( function() {
 
     $("#slider-fixinternet").sliderBs()
-    .on('slide slideStop', function (ev) {
+    .on('slide', function (ev) {
         calculatePrice();
     });
 
     $("#slider-fixphone").sliderBs()
-    .on('slide slideStop', function (ev) {
+    .on('slide', function (ev) {
         addOnePhone();
         calculatePrice();
     });
 
     
     $("#slider-mobile-gb").sliderBs()
-    .on('slideStart slide slideStop', function (ev) {
+    .on('slide', function (ev) {
         addOneMobile();
         calculatePrice();
     });
 
     $("#slider-mobile-minutesms").sliderBs()
-    .on('slideStart  slide slideStop', function (ev) {
-        addOneMobileVol();
+    .on('slide', function (ev) {    
+		addOneMobileVol();
         calculatePrice();
     });
 
     $("#slider-dongle").sliderBs()
-    .on('slide slideStop', function (ev) {
+    .on('slide', function (ev) {
         addOneDongle();
         calculatePrice();
     });
