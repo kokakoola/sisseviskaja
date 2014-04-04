@@ -14,3 +14,4 @@ Jquery põhine kalkulaator
 * Laius on paindlik. Muuta tuleb #pricecalculator laiust.
 * Kompileeritud failid on Build kataloogis
 * sinist värvi on mugav muuta variables.scss failis
+* Kui alustada mobiili alumise slaideri liigutamisega, saab 1000 juures (e. val == 3) NaNi
