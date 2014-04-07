@@ -36,15 +36,13 @@ var mobileMinuteSmsTexts = {
     1: '<span class="violet-text" id="mobile-minute-sum"></span> minutit<br><span class="violet-text" id="mobile-sms-sum"></span> sms-i',
     2: '<span class="violet-text" id="mobile-minute-sum"></span> minutit<br><span class="violet-text" id="mobile-sms-sum"></span> sms-i',
     3: '<span class="violet-text" id="mobile-minute-sum"></span> minutit<br><span class="violet-text" id="mobile-sms-sum"></span> sms-i',
-    4: '<span class="violet-text" id="mobile-minute-sum"></span> minutit<br><span class="violet-text" id="mobile-sms-sum"></span> sms-i',
 };
 
 var mobileMinuteSmsMinutes = {
     0: "0",
     1: "400",
     2: "900",
-    3: "1000",
-    4: "2000"
+    3: "2000"
 };
 
 var mobileMinuteSmsSmss = {
@@ -52,8 +50,7 @@ var mobileMinuteSmsSmss = {
     0: "0",
     1: "40",
     2: "90",
-    3: "1000",
-    4: "200"
+    3: "200"
 };
 
 var mobileMinuteSmsPrices = {
@@ -61,8 +58,7 @@ var mobileMinuteSmsPrices = {
     0: "3",
     1: "6",
     2: "12",
-    3: "0",
-    4: "24"
+    3: "24"
 };
 
 
@@ -84,17 +80,6 @@ var mobileGbPrices = {
     5: "35.95"
 };
 
-var mobileGbTexts1000 = {
-    0: '<span class="violet-text">5GB</span><br>21,6M alla /<br>5,7M üles',
-    1: '<span class="violet-text">10GB</span><br>50M alla /<br>5M üles',
-    2: '<span class="violet-text">20GB</span><br>100M alla /<br>50M üles',
-};
-
-var mobileGbPrices1000 = {
-    0: "18.99",
-    1: "23.99",
-    2: "28.99",
-};
 
 var mobileAddedToMinuteSmsMinutes = {
     0: "0",
@@ -118,8 +103,7 @@ var mobileDescriptions = {
     0: 'Soodsa Eesti-sisese minutihinnaga ja madala miinimumarvega pakkumine, mis sisaldab ka tasuta firmasiseseid kõnesid. Miinimumarve sisse arvestatakse kõik kasutatud põhiteenused. Miinimumarvele lisanduvad mobiilsete maksete teenused, annetuskampaaniad, kõnekaardi laadimised ja järelmaksuga ostetud kauba arveldusteenus.',
     1: 'Mobiiltelefoni minutimaht sisaldab kõnesid Eestist Rootsi, Soome, Norra, Taani, Läti ja Leedu numbritele (v.a. helistamine personaalnumbritele ja mittegeograafilistele numbritele). Mobiiltelefoni minutimahu täitumisel kehtib Eestist välismaale helistamise tavahind.',
     2: 'Mobiiltelefoni minutimaht sisaldab kõnesid Eestist Rootsi, Soome, Norra, Taani, Läti ja Leedu numbritele (v.a. helistamine personaalnumbritele ja mittegeograafilistele numbritele). Mobiiltelefoni minutimahu täitumisel kehtib Eestist välismaale helistamise tavahind.',
-    4: 'Mobiiltelefoni minutimaht sisaldab kõnesid Eestist Rootsi, Soome, Norra, Taani, Läti ja Leedu numbritele (v.a. helistamine personaalnumbritele ja mittegeograafilistele numbritele). Mobiiltelefoni minutimahu täitumisel kehtib Eestist välismaale helistamise tavahind.',
-    3: 'Piiramatud kõned EMT ja Elioni võrgus ning piiramatud sõnumid EMT võrgus. Teistesse Eesti võrkudesse helistamiseks ja sõnumite saatmiseks 1000 minutit ja 1000 sõnumit. Lisaks on selle pakkumise kasutajal võimalik jagada interneti paketti kuni viie oma erineva seadme vahel.'
+    3: 'Mobiiltelefoni minutimaht sisaldab kõnesid Eestist Rootsi, Soome, Norra, Taani, Läti ja Leedu numbritele (v.a. helistamine personaalnumbritele ja mittegeograafilistele numbritele). Mobiiltelefoni minutimahu täitumisel kehtib Eestist välismaale helistamise tavahind.',
 };
 
 var dongleTexts = {
@@ -150,22 +134,9 @@ function ReplaceNumberWithCommas(yourNumber) {
 var calculatePrice = function () {
 
 // Sliders dependencies
-    var $sliderMobileGb = $('#slider-mobile-gb');
-    var $sliderMobileMinuteSms = $('#slider-mobile-minutesms');
-    var valueGb = $sliderMobileGb.data('slider').getValue();
-    var valueMinuteSms = $sliderMobileMinuteSms.sliderBs('getValue');
-
-    if ($sliderMobileMinuteSms.val() == 3) {
-      $sliderMobileGb.data('slider').max = 2;
-      $sliderMobileGb.sliderBs('setValue', valueGb);
-      $("#input-mobile-gb-price").val(mobileGbPrices1000[$("#slider-mobile-gb").val()]);
-      $("#text-mobile-gb").html(mobileGbTexts1000[$("#slider-mobile-gb").val()]);
-    } else {
-      $sliderMobileGb.data('slider').max = 5;
-      $sliderMobileGb.sliderBs('setValue', valueGb);
       $("#input-mobile-gb-price").val(mobileGbPrices[$("#slider-mobile-gb").val()]);
       $("#text-mobile-gb").html(mobileGbTexts[$("#slider-mobile-gb").val()]);
-    }
+
     var fixinternetSlided = parseFloat(fixinternetPrices[$("#slider-fixinternet").val()]);
     $("#input-fixinternet-price").val(fixinternetSlided);
 
