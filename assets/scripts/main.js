@@ -370,18 +370,69 @@ $jq("#js-sendIt").click(function(){
     }
 
     // var url = "path/to/script";
+   crossDomainAjaxPost (url,$("#"+formId).serialize(),function (){
+        //ajax call success;
+        $("#js-contactwrapper").slideUp('slow');
+        $("#js-thankswrapper").show();
+   });
+
    
+/*
     $jq.ajax({
            type: "POST",
            url: url,
            data: $jq("#"+formId).serialize(),
            success: function(data) {
-                $jq("#js-contactwrapper").slideUp('slow');
-                $jq("#js-thankswrapper").show();
+              console.log("post success");
+              //  $jq("#js-contactwrapper").slideUp('slow');
+              //  $jq("#js-thankswrapper").show();
            }
+         }).done(function(data){
+            console.log("psot done");
+             $jq("#js-contactwrapper").slideUp('slow');
+            $jq("#js-thankswrapper").show();
          });
     console.log($jq("#"+formId).serialize());
+    */
     return false;
 });
+
+function crossDomainAjaxPost (url, content, successCallback) {
+
+    // IE8 & 9 only Cross domain JSON GET request
+    if ('XDomainRequest' in window && window.XDomainRequest !== null) {
+
+        var xdr = new XDomainRequest(); // Use Microsoft XDR
+        
+        xdr.onload = function (){ successCallback(JSON); };
+        xdr.onerror = function() { _result = false; };
+        xdr.onprgress = function() { };
+        xdr.ontimeout = function () { console.log("xhr TIMEOUT") };
+        xdr.open("post", url);
+        
+        //do it, wrapped in timeout to fix ie9
+        setTimeout(function () {
+            xdr.send(content);
+        }, 0);
+    } 
+
+    // IE7 and lower can't do cross domain
+    else if (navigator.userAgent.indexOf('MSIE') != -1 &&
+             parseInt(navigator.userAgent.match(/MSIE ([\d.]+)/)[1], 10) < 8) {
+       return false;
+    }    
+
+    // Do normal jQuery AJAX for everything else          
+    else {
+        $.ajax({
+            url: url,
+            data: content,
+            type: 'POST',
+            success: function (data) {
+                successCallback(data);
+            }
+        });
+    }
+}
 
 document.addEventListener("touchstart", function(){}, true);
