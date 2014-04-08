@@ -1,0 +1,30 @@
+/* START : Global rules */
+* { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+	font-family: Arial, sans-serif;
+	} 
+
+html {
+	background: $bgcolor;
+	font-size: 100%;
+	line-height: 1.5;
+	}
+ 
+
+body {
+	padding: 0;
+	margin: 0 auto;
+	//width: 96%;
+	//max-width: 78.75em /* This is 1260px */;
+	font-size: 14px;
+	line-height: 20px;
+	color: #111111;
+	}
+	
+h1, h2, h3, h4, h5, h6 {
+	line-height: normal;
+	}	
+
+/* END : Global rules */
