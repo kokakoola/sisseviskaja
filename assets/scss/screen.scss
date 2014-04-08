@@ -270,7 +270,7 @@ h2 {
 	line-height: 0.8em;
 	font-weight: 600;
 	letter-spacing: -0.025em;
-	font-size: 25px; //30px;
+	font-size: 30px;
 		.small {
 		font-size: 70%;
 		color: $hcolor;
@@ -439,7 +439,7 @@ border-radius: 4px;
 	}
 }
 
-// FIXES
+//FIXES
 #pricecalculator {
 	[class^="icon-"], [class*=" icon-"]{
 		background: none;

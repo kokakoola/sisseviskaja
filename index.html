@@ -1,3 +1,4 @@
+
 <link href="/files/modules/pitcher/scss/screen.css" media="screen" rel="stylesheet" />
    </head>
 
@@ -12,6 +13,7 @@
         <div class="col-half left upper">
           <div class="section-horizontal clearfix">
             <div class="col-quarter text-center">
+    
               <i class="img icon icon-InternetTSIcon48px">&nbsp;</i>
             </div>
             <div class="col-threequarter">
@@ -24,16 +26,18 @@
           </div>
           <div class="section-horizontal clearfix">
             <div class="col-quarter text-center">
-              <p id="js-volume-desktop"></p> 
+              
+              <p id="text-fixinternet"></p> 
             </div>
             <div class="col-threequarter">
-              <input class="slider" id="js-slider-desktop" type="text" value="0" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+              <input class="slider" id="slider-fixinternet" type="text" value="0" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
             </div>
           </div>
           <hr>
           <!-- Desktop phone -->
           <div class="section-horizontal clearfix">
             <div class="col-quarter text-center">
+             
               <i class="img icon icon-PhoneTSIcon48px">&nbsp;</i>
             </div>
               <div class="col-threequarter">
@@ -41,8 +45,11 @@
                   <strong>Lauatelefonide arv</strong>
                 </div>
                 <div class="col-forty right text-right">
+                 
                   <button type="button" class="btn btn-link" onclick="removePhone();"><i class="icon icon-MinusTSIcon48px">&nbsp;</i></button>
-                  <span class="amount" id="js-phoneamount">&nbsp;</span>
+             
+                  <span class="amount" id="number-fixphone">&nbsp;</span>
+                  
                   <button type="button" class="btn btn-link" onclick="addPhone();"><i class="icon icon-AddTSIcon48px">&nbsp;</i></button>
                 </div>
               </div>
@@ -53,10 +60,12 @@
             </div>
             <div class="section-horizontal clearfix">
               <div class="col-quarter text-center">
-                <p id="js-volume-phone"></p> 
+                
+                <p id="text-fixphone"></p> 
               </div>
               <div class="col-threequarter">
-                <input class="slider" id="js-slider-phone" type="text" value="0" data-slider-min="0" data-slider-max="2" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+                
+                <input class="slider" id="slider-fixphone" type="text" value="0" data-slider-min="0" data-slider-max="2" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
               </div>
             </div>
             <p class="small">Lauatelefoni minutimaht sisaldab kõnesid Eestist Rootsi, Soome, Norra, Taani, Läti, Leedu ja Venemaa fiks- ja mobiilinumbritele. Lauatelefoni minutimahu täitumisel kehtib Eestist välismaale helistamise tavahind.</p>
@@ -66,15 +75,16 @@
         <div class="col-half right divided upper">
           <div class="section-horizontal clearfix">
             <div class="col-quarter text-center">
+              
               <i class="img icon icon-MobileTSIcon48px">&nbsp;</i>
             </div>
             <div class="col-threequarter">
               <div class="col-sixty left">
                 <strong>Mobiilide arv</strong>
               </div>
-              <div class="col-forty right text-right">
+              <div class="col-forty right text-right">    
                 <button type="button" class="btn btn-link" onclick="removeMobile();"><i class="icon icon-MinusTSIcon48px">&nbsp;</i></button>
-                <span class="amount" id="js-mobileamount">&nbsp;</span>
+                <span class="amount" id="number-mobile">&nbsp;</span>
                 <button type="button" class="btn btn-link" onclick="addMobile();"><i class="icon icon-AddTSIcon48px">&nbsp;</i></button>
               </div>
             </div>
@@ -85,21 +95,25 @@
           </div>
           <div class="section-horizontal clearfix">
             <div class="col-quarter text-center">
-              <p id="js-volume-mobile-vol"></p> 
+              
+              <p id="text-mobile-minutesms"></p> 
+              
             </div>
             <div class="col-threequarter">
-              <input class="slider" id="js-slider-mobile-vol" type="text" value="0" data-slider-min="0" data-slider-max="3" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+              <input class="slider" id="slider-mobile-minutesms" type="text" value="0" data-slider-min="0" data-slider-max="3" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
             </div>
+            <span></span><br>
+
           </div>
           <div class="section-horizontal clearfix">
-            <div class="col-quarter text-center">
-              <p id="js-volume-mobile"></p> 
+            <div class="col-quarter text-center"> 
+              <p id="text-mobile-gb"></p> 
             </div>
             <div class="col-threequarter">
-              <input class="slider" id="js-slider-mobile" type="text" value="0" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
+              <input class="slider" id="slider-mobile-gb" type="text" value="0" data-slider-min="0" data-slider-max="5" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-selection="after" data-slider-tooltip="hide">
             </div>
           </div>
-          <p class="small">
+          <p class="small"  id="description-mobile">
             Mobiiltelefoni minutimaht sisaldab kõnesid Eestist Rootsi, Soome, Norra, Taani, Läti ja Leedu numbritele (v.a. helistamine personaalnumbritele ja mittegeograafilistele numbritele). Mobiiltelefoni minutimahu täitumisel kehtib Eestist välismaale helistamise tavahind.
           </p>
           <hr>
@@ -111,31 +125,32 @@
             </div>
             <div class="col-threequarter">
               <div class="col-sixty left">
-                <strong>Netipulkade arv</strong>
+                <strong>Mobiilne internet</strong>
               </div>
               <div class="col-forty right text-right">
                 <button type="button" class="btn btn-link" onclick="removeDongle();"><i class="icon icon-MinusTSIcon48px">&nbsp;</i></button>
-                <span class="amount" id="js-dongleamount">&nbsp;</span>
+                <span class="amount" id="number-dongle">&nbsp;</span>
                 <button type="button" class="btn btn-link" onclick="addDongle();"><i class="icon icon-AddTSIcon48px">&nbsp;</i></button>
               </div>
             </div>
             <div class="col-threequarter">
               <hr>
-              <p>Andmemaht ühe netipulga <br> kohta kuus</p>
+
+              <p>Andmemaht ühe seadme <br> kohta kuus</p>
             </div>
           </div>
           <div class="section-horizontal clearfix">
             <div class="col-quarter text-center">
-              <p id="js-volume-dongle"></p> 
+              <p id="text-dongle"></p> 
             </div>
             <div class="col-threequarter">
-              <input class="slider" id="js-slider-dongle" type="text" value="0" data-slider-min="0" data-slider-max="4" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-tooltip="hide" data-slider-selection="after">
+              <input class="slider" id="slider-dongle" type="text" value="0" data-slider-min="0" data-slider-max="4" data-slider-step="1" data-slider-value="-10" data-slider-orientation="horizontal" data-slider-tooltip="hide" data-slider-selection="after">
             </div>
           </div>
         </div>
 
         <div id="conclusion">
-          <h2 id="total">Hind sinule alates: <span class="blue-text"><span id="js-sum">&nbsp;</span> € / kuus</span>
+          <h2 id="total">Orienteeruv hind: <span class="blue-text"><span id="total-sum">&nbsp;</span> € / kuus</span>
             <br>
             <span class="small">Hinnale lisandub käibemaks</span>
           </h2>
@@ -145,11 +160,10 @@
 
     </div>
 
-
     <div id="js-contactwrapper" class="hide">
       <h2 class="text-center">Kellele me täpsustatud pakkumise saadame? </h2>
       <div id="theform">
-        <h2><span class="small">Palun sisesta siia oma kontaktandmed.</span></h2>
+        <h2><span class="small">Palun sisesta siia oma kontaktandmed.</span></h2> 
         <form action="email:priidik.vaikla@elion.ee" id="hinnapakkumine" method="post">  
           <div id="contactform">
             <div class="form-group">
@@ -168,38 +182,39 @@
           <div id="chosenServices" class="hide">
             <strong>Internet</strong>
             <br>
-            Kiirus: <input title="0" type="text" id="js-volume-desktopStripped" value="0" name="kontoriInternetiKiirus" >
-            Kuutasu: <input title="0" type="text" id="js-price-desktop" value="0" name="kontoriInternetiKuutasu">
+            Kiirus: <input title="0" type="text" id="input-fixinternet-speed" value="0" name="kontoriInternetiKiirus" >
+            Kuutasu: <input title="0" type="text" id="input-fixinternet-price" value="0" name="kontoriInternetiKuutasu">
             <br><br>
             <strong>Lauatelefoni liitumisi</strong>
             <br>
-            Maht: <input title="0" type="text" id="js-volume-phoneStripped" value="0" name="lauatelefoniMaht">
-            Kogus: <input title="0" type="text" id="js-counted-phone" value="0" name="lauatelefoniKogus">
-            Liitumiste hind: <input title="0" type="text" id="js-counted-phonePrice" value="0" name="lauatelefoniLiitumiseHind">
-            Hind: <input title="0" type="text" id="js-price-phone" value="0" name="lauatelefoniHind">
-            Kuutasu: <input title="0" type="text" id="js-counted-phoneSum" value="0" name="lauatelefoniKuutasu">
+            Maht: <input title="0" type="text" id="input-fixphone-minutes" value="0" name="lauatelefoniMaht">
+            Kogus: <input title="0" type="text" id="input-fixphone-amount" value="0" name="lauatelefoniKogus">
+            Liitumiste hind: <input title="0" type="text" id="input-fixphone-singleprice" value="0" name="lauatelefoniLiitumiseHind">
+            Hind: <input title="0" type="text" id="input-fixphone-price" value="0" name="lauatelefoniHind">
+            Kuutasu: <input title="0" type="text" id="input-fixphone-sum" value="0" name="lauatelefoniKuutasu">
             <br><br>
             <strong>Mobiil ja mobiilinternet</strong>
             <br>
-            Kogus: <input title="0" type="text" id="js-counted-mobile" value="0" name="mobiiliKogus">
+            Kogus: <input title="0" type="text" id="input-mobile-amount" value="0" name="mobiiliKogus">
             <br>
             Pakett mobiilinternet:
-            Hind: <input title="0" id="js-price-mobile" name="mobiilinternetiHind">
-            Lisanduvad SMS-id: <input title="0" id="js-volume-mobile-sms" name="mobiilinternetigaLisanuvadSmsid"> 
-            Lisanduvad minutid: <input title="0" id="js-volume-mobile-minutes" name="mobiilinternetiga LisanduvadMinutid">
+           
+            Hind: <input title="0" id="input-mobile-gb-price" name="mobiilinternetiHind">
+            Lisanduvad SMS-id: <input title="0" id="input-mobile-gb-plus-sms" name="mobiilinternetigaLisanuvadSmsid"> 
+            Lisanduvad minutid: <input title="0" id="input-mobile-gb-plus-minutes" name="mobiilinternetiga LisanduvadMinutid">
             <br>
-            Pakett kõneaeg ja sms:  Hind: <input title="0" id="js-price-mobile-vol" name="mobiilKoneajaHind">
-            SMS-ide arv: <input title="0" id="js-volume-mobile-sms-val" value="0" name="mobiilKoneajaSmsiHulk"> 
-            Minutit: <input title="0" id="js-volume-mobile-min-val" name="mobiilKoneajaMinutiHulk">
+            Pakett kõneaeg ja sms:  Hind: <input title="0" id="input-mobile-minutesms-price" name="mobiilKoneajaHind">
+            SMS-ide arv: <input title="0" id="input-mobile-minutesms-sms" value="0" name="mobiilKoneajaSmsiHulk"> 
+            Minutit: <input title="0" id="input-mobile-minutesms-minutes" name="mobiilKoneajaMinutiHulk">
             <br>
-            Kuutasu: <input title="0" type="text" id="js-mobilesum" value="0" name="mobiilKuutasu"> 
+            Kuutasu: <input title="0" type="text" id="input-mobile-sum" value="0" name="mobiilKuutasu"> 
             <br><br>
-            <strong>Netipulk</strong>
+            <strong>Mobiilne internet</strong>
             <br> 
-            Pakett: <input title="0" type="text" id="js-volume-dongleStripped" value="0" name="netipulkPakett">
-            Kogus: <input title="0" type="text" id="js-counted-dongle" value="0" name="netipulkKogus">
-            Hind: <input title="0" id="js-price-dongle" name="netipulkHind">
-            Kuutasu: <input title="0" type="text" id="js-donglesum" value="0" name="netipulkKuutasu">
+            Pakett: <input title="0" type="text" id="input-dongle-gb" value="0" name="netipulkPakett">
+            Kogus: <input title="0" type="text" id="input-dongle-amount" value="0" name="netipulkKogus">
+            Hind: <input title="0" id="input-dongle-price" name="netipulkHind">
+            Kuutasu: <input title="0" type="text" id="input-dongle-sum" value="0" name="netipulkKuutasu">
           </div>
           <div class="alert alert-danger hide"><i class="icon icon-AlertTSIcon48px">&nbsp;</i>  Unustasid midagi täitmata. Palun vaata andmed üle.</div>
           <div class="buttongroup">
@@ -220,6 +235,11 @@
 
 
       <!-- All other scripts -->
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+      <script>!window.jQuery && document.write(unescape('%3Cscript src="assets/scripts/jquery-1.8.3.min.js"%3E%3C/script%3E'))</script>
+      <script src="assets/scripts/bootstrap-slider.js"></script>
+      <script src="assets/scripts/main.js"></script>
+
       <script src="/files/modules/pitcher/scripts/bootstrap-slider.js"></script>
       <script src="/files/modules/pitcher/scripts/main.js"></script>
       <script type="text/javascript">
